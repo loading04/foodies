@@ -1,0 +1,2 @@
+# Foddies
+Mobile application for android smartphone to logs the meals that you made with pictures or videos and you can add the servings, the cost, and the occasion. and if you don’t have no idea what you prepare this app can help you with some suggestions also if you have some precise amount of money this app can suggest what you prepare depends of your logs. this application is for everyone especially moms.
