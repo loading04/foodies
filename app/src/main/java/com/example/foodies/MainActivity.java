@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         //set selected item
         bottomNavigationView.setSelectedItemId(R.id.discover);
 
+
+
+
+        ////Bottom Navigation View behaviour
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

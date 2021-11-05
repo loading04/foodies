@@ -23,6 +23,12 @@ public class BagActivity extends AppCompatActivity {
         //set selected item
         bottomNavigationView.setSelectedItemId(R.id.bag);
 
+
+
+
+
+
+        //Bottom Navigation View behaviour
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

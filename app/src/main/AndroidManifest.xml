@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Foodies">
         <activity android:name=".BagActivity"></activity>
         <activity android:name=".RecepiesActivity"></activity>
+        <activity android:name=".AddRecepies"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">

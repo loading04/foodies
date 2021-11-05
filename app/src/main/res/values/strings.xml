@@ -4,4 +4,11 @@
     <string name="recent">Recentely Viewed</string>
     <string name="bag">Your Grocery Bag is empty.</string>
     <string name="add_recepie">Add recipes</string>
+    <string name="meal">Name of the meal</string>
+    <string name="type">Type of meal</string>
+    <string name="price">Price</string>
+    <string name="occasion">Occasion</string>
+    <string name="serving">Servings</string>
+
+
 </resources>

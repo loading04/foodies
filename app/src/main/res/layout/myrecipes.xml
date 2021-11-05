@@ -46,12 +46,12 @@
 
 
     <ScrollView
-        android:layout_width="402dp"
-        android:layout_height="558dp"
+        android:layout_width="406dp"
+        android:layout_height="625dp"
         android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
         android:fillViewport="true"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
         app:layout_constraintVertical_bias="0.3">
@@ -62,8 +62,9 @@
             android:stretchColumns="1">
 
             <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
+
+                android:id="@+id/addrecipes"
+                android:layout_width="289dp"
                 android:layout_height="29dp"
                 android:background="@drawable/rounded_button_white"
                 android:text="@string/add_recepie"

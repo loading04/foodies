@@ -3,6 +3,8 @@ package com.example.foodies;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +15,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class RecepiesActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView ;
+    Button addRecepies;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -22,9 +25,21 @@ public class RecepiesActivity extends AppCompatActivity {
 
         //init
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        addRecepies =findViewById(R.id.addrecipes);
         //set selected item
         bottomNavigationView.setSelectedItemId(R.id.recipes);
 
+        //add recepies
+        addRecepies.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(),AddRecepies.class));
+                overridePendingTransition(0,0);
+
+            }
+        });
+
+        //Bottom Navigation View behaviour
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
