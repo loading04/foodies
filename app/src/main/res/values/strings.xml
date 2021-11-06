@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">foodies</string>
+    <string name="app_name" translatable="false">foodies</string>
     <string name="searchbar">Search for recipes</string>
     <string name="recent">Recentely Viewed</string>
     <string name="bag">Your Grocery Bag is empty.</string>
@@ -9,6 +9,31 @@
     <string name="price">Price</string>
     <string name="occasion">Occasion</string>
     <string name="serving">Servings</string>
+    <string name="description">Description</string>
+    <string name="ingredient">Ingredient</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="add">Add recipes</string>
+
+
+
+
+
+
+
+    <string-array name="occasion">
+        <item>Birthdays</item>
+        <item>Events</item>
+        <item>Guests</item>
+        <item>Casual</item>
+        <item>No occasion</item>
+    </string-array>
+
+    <string-array name="type">
+        <item>Breakfast</item>
+        <item>Lunch</item>
+        <item>Dinner</item>
+        <item>Snacks</item>
+    </string-array>
 
 
 </resources>

@@ -6,11 +6,15 @@
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.3828125" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/ic_bag.xml" value="0.3828125" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
+        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/ic_love.xml" value="0.3828125" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/rounded_button_white.xml" value="0.3828125" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/rounded_edittext.xml" value="0.3828125" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/selector.xml" value="0.22135416666666666" />
+        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/spinner_item.xml" value="0.2598958333333333" />
+        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout-v28/addrecipes.xml" value="0.24375" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
-        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/addrecipes.xml" value="0.3177083333333333" />
+        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/addrecipes.xml" value="0.33" />
+        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/color_spinner_layout.xml" value="0.24375" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/mybag.xml" value="0.3365036231884058" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/myrecipes.xml" value="0.3365036231884058" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
