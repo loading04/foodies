@@ -9,6 +9,8 @@
     tools:context=".MainActivity">
 
 
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
         android:layout_width="403dp"
@@ -25,10 +27,11 @@
 
     <EditText
         android:id="@+id/editTextTextPersonName"
-        android:layout_width="380dp"
-        android:layout_height="31dp"
+        android:layout_width="384dp"
+        android:layout_height="38dp"
         android:layout_marginTop="4dp"
         android:background="@drawable/rounded_edittext"
+        android:autofillHints="search fo recipes"
 
         android:drawableLeft="?android:attr/actionModeWebSearchDrawable"
 
@@ -42,152 +45,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
 
+    <Button
 
-    <ScrollView
-        android:layout_width="406dp"
-        android:layout_height="625dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginTop="4dp"
-        android:fillViewport="true"
-        app:layout_constraintBottom_toBottomOf="@+id/bottomNavigationView"
+        android:id="@+id/addrecipes"
+        android:layout_width="match_parent"
+        android:layout_height="29dp"
+        android:background="@drawable/rounded_button_white"
+        android:text="@string/add_recepie"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyle"
+        android:layout_width="389dp"
+        android:layout_height="588dp"
+        app:layout_constraintBottom_toTopOf="@+id/addrecipes"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
-        app:layout_constraintVertical_bias="0.3">
-
-        <TableLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:stretchColumns="1">
-
-            <Button
-
-                android:id="@+id/addrecipes"
-                android:layout_width="289dp"
-                android:layout_height="29dp"
-                android:background="@drawable/rounded_button_white"
-                android:text="@string/add_recepie"
-                tools:layout_editor_absoluteX="296dp"
-                tools:layout_editor_absoluteY="46dp" />
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="395dp"
-                android:layout_height="22dp"
-                android:text="@string/recent"
-                android:textColor="@color/white"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="60dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="25dp">
-
-                <HorizontalScrollView
-                    android:id="@+id/horizontalScrollView"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_launcher_foreground">
-
-                        </ImageView>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_launcher_foreground">
-
-                        </ImageView>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_launcher_foreground">
-
-                        </ImageView>
-
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_launcher_foreground">
-
-                        </ImageView>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_launcher_foreground">
-
-                        </ImageView>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_launcher_foreground">
-
-                        </ImageView>
-
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_launcher_foreground">
-
-                        </ImageView>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_launcher_foreground">
-
-                        </ImageView>
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:srcCompat="@drawable/ic_launcher_foreground">
-
-                        </ImageView>
-
-
-                    </LinearLayout>
-
-                </HorizontalScrollView>
-            </LinearLayout>
-
-
-            <ImageView app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
-
-            <ImageView app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
-
-            <ImageView app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
-
-
-            <ImageView app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
-
-            <ImageView app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
-
-            <ImageView app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
-
-            <ImageView app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
-
-            <ImageView app:srcCompat="@drawable/ic_launcher_foreground"></ImageView>
-
-
-        </TableLayout>
-
-    </ScrollView>
+        tools:listitem="@layout/row"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

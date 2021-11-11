@@ -23,6 +23,8 @@ import com.example.foodies.DataModel.AppDataBase;
 import com.example.foodies.DataModel.DataConverter;
 import com.example.foodies.DataModel.Food;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
@@ -48,6 +50,7 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
     Spinner spinnerType;
     Button  addrecipes;
     Button takepicture;
+    FloatingActionButton fab;
 
 
 
@@ -69,6 +72,7 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
         spinnerOcassion = findViewById(R.id.spinnerOcassion);
         spinnerType = findViewById(R.id.spinnerType);
         takepicture = findViewById(R.id.addpicture);
+
 
 
         //init database
@@ -102,6 +106,7 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
 
 
         });
+
 
 
 
