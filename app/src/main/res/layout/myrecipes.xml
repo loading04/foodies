@@ -25,28 +25,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="384dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="4dp"
-        android:background="@drawable/rounded_edittext"
-        android:autofillHints="search fo recipes"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_constraintTop_toTopOf="parent">
 
-        android:drawableLeft="?android:attr/actionModeWebSearchDrawable"
-
-        android:ems="10"
-        android:fontFamily="sans-serif-condensed-light"
-        android:gravity="center"
-        android:hint="@string/searchbar"
-        android:inputType="textPersonName"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+    </androidx.appcompat.widget.Toolbar>
 
     <Button
 
@@ -68,7 +53,7 @@
         app:layout_constraintBottom_toTopOf="@+id/addrecipes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:listitem="@layout/row" />
 
 

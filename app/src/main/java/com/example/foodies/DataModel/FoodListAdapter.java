@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -12,14 +14,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.foodies.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodViewHolder> {
+public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodViewHolder> implements Filterable {
 
     private final LayoutInflater layoutInflater;
     private Context mContext;
     private List<Food> mFood;
     private SelectedFood selectedFood;
+    private List<Food> foodListFiltred;
 
 
 
@@ -29,9 +33,10 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodVi
         mContext=context;
 
     }
-    public FoodListAdapter(Context context,SelectedFood selectedFood)
+    public FoodListAdapter(Context context,SelectedFood selectedFood,List<Food> mFood)
     {
         layoutInflater = LayoutInflater.from(context);
+        this.foodListFiltred=mFood;
         mContext=context;
         this.selectedFood = selectedFood;
     }
@@ -74,6 +79,48 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodVi
     {
         mFood = foods;
         notifyDataSetChanged();
+    }
+
+    @Override
+    public Filter getFilter() {
+        Filter filter = new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+
+                FilterResults fileFilterResults = new FilterResults();
+
+                if (constraint == null ||  constraint.length() == 0)
+                {
+                    fileFilterResults.count = foodListFiltred.size();
+                    fileFilterResults.values = foodListFiltred;
+                }
+                else {
+                    String searchChr = constraint.toString().toLowerCase();
+
+                    List<Food> resultData = new ArrayList<>();
+
+                    for (Food food : foodListFiltred ){
+                        if (food.getMealName().toLowerCase().contains(searchChr)){
+                            resultData.add(food);
+                        }
+                    }
+                    fileFilterResults.count = resultData.size();
+                    fileFilterResults.values = resultData;
+
+                }
+                return fileFilterResults;
+            }
+
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+
+                mFood = (List<Food>) results.values;
+
+                notifyDataSetChanged();
+
+            }
+        };
+        return filter;
     }
 
     public interface SelectedFood

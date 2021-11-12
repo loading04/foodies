@@ -11,7 +11,7 @@ public class DataConverter {
     public static byte[] convertImage2ByteArray(Bitmap bitmap)
     {
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.JPEG,0,stream);
+        bitmap.compress(Bitmap.CompressFormat.JPEG,100,stream);
         return stream.toByteArray();
 
     }
