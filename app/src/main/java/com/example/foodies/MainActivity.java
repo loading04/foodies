@@ -36,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(getApplicationContext(),BagActivity.class));
                         overridePendingTransition(0,0);
                         return true;
+
                     case R.id.discover:
                         return true;
 

@@ -19,7 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import java.util.List;
 
-public class RecepiesActivity extends AppCompatActivity {
+public class RecepiesActivity extends AppCompatActivity implements FoodListAdapter.SelectedFood {
 
     BottomNavigationView bottomNavigationView ;
     RecyclerView recyclerView;
@@ -44,7 +44,7 @@ public class RecepiesActivity extends AppCompatActivity {
         bottomNavigationView.setSelectedItemId(R.id.recipes);
 
         //init recyle view adapter
-        foodListAdapter = new FoodListAdapter(this);
+        foodListAdapter = new FoodListAdapter(this,this);
         recyclerView.setAdapter(foodListAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
@@ -93,5 +93,14 @@ public class RecepiesActivity extends AppCompatActivity {
     public List<Food> showFood()
     {
         return dataBase.foodDAO().getFoods();
+    }
+
+    @Override
+    public void selectedFood(Food food) {
+
+        startActivity(new Intent(RecepiesActivity.this,SelectedFoodActivity.class).putExtra("data",food));
+
+
+
     }
 }

@@ -18,11 +18,6 @@
     <string name="no">no recipes </string>
 
 
-
-
-
-
-
     <string-array name="occasion">
         <item>Birthdays</item>
         <item>Events</item>

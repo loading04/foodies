@@ -24,7 +24,7 @@ import com.example.foodies.DataModel.DataConverter;
 import com.example.foodies.DataModel.Food;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+
 
 import java.util.List;
 
@@ -189,12 +189,14 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
         switch (parent.getId())
         {
             case R.id.spinnerOcassion:
-                 occasion = parent.getItemAtPosition(position).toString();
-                Toast.makeText(parent.getContext(),occasion,Toast.LENGTH_SHORT).show();
+                occasion = parent.getItemAtPosition(position).toString();
+
+                break;
 
             case R.id.spinnerType:
                  type = parent.getItemAtPosition(position).toString();
-                Toast.makeText(parent.getContext(),type,Toast.LENGTH_SHORT).show();
+
+                break;
         }
 
     }
@@ -256,7 +258,9 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
 
             dataBase.foodDAO().insertFood(food);
             Log.i("all elements",food.toString());
-            Toast.makeText(this,"Data added successfully",Toast.LENGTH_LONG);
+            Toast.makeText(this,"Data added successfully",Toast.LENGTH_SHORT);
+
+            startActivity(new Intent(getApplicationContext(),RecepiesActivity.class));
 
         }
 
@@ -276,30 +280,3 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
 
 
 
-
-/*
-   //take picture
-    public void takePicture(View view)
-    {
-        Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        //if camera is ready
-        if (intent.resolveActivity(getPackageManager()) != null)
-        {
-            startActivityForResult(intent,CAMERA_intent);
-        }
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (requestCode){
-            case CAMERA_intent:
-                bmpImage = (Bitmap) data.getExtras().get("data");
-                if (bmpImage != null)
-                {
-                    Toast.makeText(this,"picture done",Toast.LENGTH_LONG).show();
-                }
-                break;
-        }
-    }
-*/

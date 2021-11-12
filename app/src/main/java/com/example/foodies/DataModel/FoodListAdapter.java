@@ -19,6 +19,7 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodVi
     private final LayoutInflater layoutInflater;
     private Context mContext;
     private List<Food> mFood;
+    private SelectedFood selectedFood;
 
 
 
@@ -26,10 +27,21 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodVi
     {
         layoutInflater = LayoutInflater.from(context);
         mContext=context;
+
     }
+    public FoodListAdapter(Context context,SelectedFood selectedFood)
+    {
+        layoutInflater = LayoutInflater.from(context);
+        mContext=context;
+        this.selectedFood = selectedFood;
+    }
+
+
 
     @NonNull
     @Override
+
+    //create a new Layout
     public FoodViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = layoutInflater.inflate(R.layout.row,parent,false);
         FoodViewHolder viewHolder = new FoodViewHolder(itemView);
@@ -64,6 +76,11 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodVi
         notifyDataSetChanged();
     }
 
+    public interface SelectedFood
+    {
+        void selectedFood (Food food);
+    }
+
     public class FoodViewHolder extends RecyclerView.ViewHolder {
 
         private TextView foodItemViewMeal ;
@@ -83,6 +100,14 @@ public class FoodListAdapter extends RecyclerView.Adapter<FoodListAdapter.FoodVi
             foodItemViewOcassion=itemView.findViewById(R.id.ocassion);
             foodItemViewPrice=itemView.findViewById(R.id.money);
             imageView = itemView.findViewById(R.id.image);
+
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectedFood.selectedFood(mFood.get(getAdapterPosition()));
+                }
+            });
 
         }
 

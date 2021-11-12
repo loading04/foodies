@@ -58,15 +58,22 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         tools:ignore="TouchTargetSizeCheck" />
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyle"
-        android:layout_width="389dp"
-        android:layout_height="588dp"
+        android:layout_width="match_parent"
+        android:layout_height="605dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toTopOf="@+id/addrecipes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/row"
-        />
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName"
+        tools:listitem="@layout/row" />
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

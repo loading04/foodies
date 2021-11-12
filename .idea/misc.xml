@@ -7,6 +7,7 @@
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/ic_bag.xml" value="0.3828125" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/ic_baseline_add.xml" value="0.3828125" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.3828125" />
+        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/ic_baseline_attach_money_24.xml" value="0.3141025641025641" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3828125" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/ic_love.xml" value="0.3828125" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/rounded_button_white.xml" value="0.3828125" />
@@ -15,11 +16,13 @@
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/drawable/spinner_item.xml" value="0.2598958333333333" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout-v28/addrecipes.xml" value="0.24375" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/activity_main.xml" value="0.2957427536231884" />
+        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/activity_selected_food.xml" value="0.25" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/addrecipes.xml" value="0.33" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/color_spinner_layout.xml" value="0.24375" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/mybag.xml" value="0.3365036231884058" />
-        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/myrecipes.xml" value="0.33147632311977715" />
-        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/row.xml" value="0.4945240101095198" />
+        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/myrecipes.xml" value="0.5" />
+        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/myrecipeslinear.xml" value="0.30085470085470084" />
+        <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/layout/row.xml" value="0.5829042224510813" />
         <entry key="..\:/Users/SBS/AndroidStudioProjects/foodies/app/src/main/res/menu/bottom_nav_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
