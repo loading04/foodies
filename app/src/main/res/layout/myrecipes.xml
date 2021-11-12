@@ -26,6 +26,9 @@
         app:menu="@menu/bottom_nav_menu" />
 
     <androidx.appcompat.widget.Toolbar
+        android:outlineAmbientShadowColor="@color/purple_200"
+        android:outlineSpotShadowColor="@color/purple_200"
+        android:background="@color/white"
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"

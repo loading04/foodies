@@ -24,18 +24,17 @@ import com.example.foodies.DataModel.DataConverter;
 import com.example.foodies.DataModel.Food;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-
-
 import java.util.List;
 
-public class AddRecepies extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class UpdateRecipe extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     //var
     String type;
     String occasion;
     private AppDataBase dataBase;
-    //final int CAMERA_intent = 51;
-    static final int REQUEST_IMAGE_CAPTURE = 1;
+
+    static final int REQUEST_IMAGE_CAPTURE = 2;
+
     Bitmap imageBitmap;
 
     //widgets
@@ -48,40 +47,38 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
     BottomNavigationView bottomNavigationView ;
     Spinner spinnerOcassion;
     Spinner spinnerType;
-    Button  addrecipes;
+    Button addrecipes;
     Button takepicture;
-
-
-
-
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.addrecipes);
+        setContentView(R.layout.updaterecipe);
+
+
+
 
         //binding
-        addrecipes = findViewById(R.id.addrecipes);
-        mealName = findViewById(R.id.namemeal);
-        time = findViewById(R.id.time);
-        price = findViewById(R.id.price);
-        description = findViewById(R.id.description);
-        ingredient = findViewById(R.id.ingredient);
-        servings = findViewById(R.id.servings);
+        addrecipes = findViewById(R.id.addrecipes2);
+        mealName = findViewById(R.id.namemeal2);
+        time = findViewById(R.id.time2);
+        price = findViewById(R.id.price2);
+        description = findViewById(R.id.description2);
+        ingredient = findViewById(R.id.ingredient2);
+        servings = findViewById(R.id.servings2);
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        spinnerOcassion = findViewById(R.id.spinnerOcassion);
-        spinnerType = findViewById(R.id.spinnerType);
-        takepicture = findViewById(R.id.addpicture);
+        spinnerOcassion = findViewById(R.id.spinnerOcassion2);
+        spinnerType = findViewById(R.id.spinnerType2);
+        takepicture = findViewById(R.id.addpicture2);
 
 
 
         //init database
         dataBase = AppDataBase.getInstance(this);
 
-        //init image
-        imageBitmap = null;
+
         //init occasion spinner
-        ArrayAdapter<CharSequence>adapter = ArrayAdapter.createFromResource(this,R.array.occasion, R.layout.color_spinner_layout);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.occasion, R.layout.color_spinner_layout);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinnerOcassion.setAdapter(adapter);
         spinnerOcassion.setOnItemSelectedListener(this);
@@ -94,23 +91,32 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
         spinnerType.setOnItemSelectedListener(this);
 
 
-        //set selected item in bottom navigation
-        bottomNavigationView.setSelectedItemId(R.id.recipes);
+        //intent
+        Intent intent = getIntent();
+        Food food = new Food();
 
 
-        //action addrecipes button
+        if (intent.getExtras() != null) {
+             food = (Food) intent.getSerializableExtra("data");
 
+            mealName.setText(food.getMealName());
+            time.setText(food.getTime());
+            price.setText(food.getPrice());
+            ingredient.setText(food.getIngredient());
+            servings.setText(food.getServings());
+            description.setText(food.getDescription());
+
+
+        }
+
+
+        Food finalFood = food;
         addrecipes.setOnClickListener(v -> {
 
-            addResepies();
+            addResepies(finalFood);
 
 
         });
-
-
-
-
-
 
         //Bottom Navigation View behaviour
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -136,14 +142,11 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
             }
         });
 
-
         takepicture.setOnClickListener(v -> {
             dispatchTakePictureIntent();
         });
 
     }
-
-
 
     //action take picture
     private void dispatchTakePictureIntent() {
@@ -162,7 +165,7 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
             Bundle extras = data.getExtras();
-             imageBitmap = (Bitmap) extras.get("data");
+            imageBitmap = (Bitmap) extras.get("data");
             if (imageBitmap == null)
             {
                 Toast.makeText(this,"picture didnt taken",Toast.LENGTH_LONG).show();
@@ -194,7 +197,7 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
                 break;
 
             case R.id.spinnerType:
-                 type = parent.getItemAtPosition(position).toString();
+                type = parent.getItemAtPosition(position).toString();
 
                 break;
         }
@@ -208,10 +211,10 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
 
 
     //methdos
-    public void addResepies()
+    public void addResepies(Food foody)
     {
         Log.e("show element",
-                    "\n mealname :"+mealName.getText().toString()+
+                "\n mealname :"+mealName.getText().toString()+
                         "\n occasion :"+occasion+
                         "\n type :"+type+
                         "\n description :"+description.getText().toString()+
@@ -224,8 +227,7 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
         );
 
         if(mealName.getText().toString().isEmpty()||
-                occasion.isEmpty()||
-                type.isEmpty()||
+
                 description.getText().toString().isEmpty()||
                 ingredient.getText().toString().isEmpty()||
                 price.getText().toString().isEmpty()||
@@ -237,27 +239,24 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
             Toast.makeText(this,
                     "user Data is missing",
                     Toast.LENGTH_LONG
-                    ).show();
+            ).show();
         }
         else
         {
-            Food food = new Food();
-            food.setMealName(mealName.getText().toString());
-            food.setOccasion(occasion);
-            food.setType(type);
-            food.setDescription(description.getText().toString());
-            food.setIngredient(ingredient.getText().toString());
-            food.setPrice(price.getText().toString());
-            food.setTime(time.getText().toString());
-            food.setServings(servings.getText().toString());
-            food.setImage(DataConverter.convertImage2ByteArray(imageBitmap));
+
+            foody.setMealName(mealName.getText().toString());
+            foody.setDescription(description.getText().toString());
+            foody.setIngredient(ingredient.getText().toString());
+            foody.setPrice(price.getText().toString());
+            foody.setTime(time.getText().toString());
+            foody.setServings(servings.getText().toString());
+            foody.setImage(DataConverter.convertImage2ByteArray(imageBitmap));
 
 
 
 
-
-            dataBase.foodDAO().insertFood(food);
-            Log.i("all elements",food.toString());
+            dataBase.foodDAO().UpdateFood(foody);
+            Log.i("all elements",foody.toString());
             Toast.makeText(this,"Data added successfully",Toast.LENGTH_SHORT);
 
             startActivity(new Intent(getApplicationContext(),RecepiesActivity.class));
@@ -272,11 +271,4 @@ public class AddRecepies extends AppCompatActivity implements AdapterView.OnItem
     {
         return dataBase.foodDAO().getFoods();
     }
-
-
-
 }
-
-
-
-

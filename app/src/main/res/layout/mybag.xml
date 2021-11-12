@@ -23,18 +23,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recylebag"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/greytwo"
-        android:gravity="center"
-        android:text="@string/bag"
-        android:textColor="@color/white"
-        android:textSize="20dp"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="26dp">
+        android:layout_height="605dp"
 
-    </TextView>
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:listitem="@layout/rowbag" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

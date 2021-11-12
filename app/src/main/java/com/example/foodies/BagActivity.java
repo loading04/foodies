@@ -7,11 +7,20 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.foodies.DataModel.AppDataBase;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
 
 public class BagActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView ;
+    RecyclerView recyclerView;
+    private AppDataBase dataBase;
+
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -20,8 +29,15 @@ public class BagActivity extends AppCompatActivity {
 
         //init
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        recyclerView = findViewById(R.id.recylebag);
         //set selected item
         bottomNavigationView.setSelectedItemId(R.id.bag);
+        //database
+        dataBase = AppDataBase.getInstance(this);
+
+
+
+
 
 
 
@@ -53,4 +69,6 @@ public class BagActivity extends AppCompatActivity {
         });
 
     }
+
+
 }

@@ -21,6 +21,8 @@
         <activity android:name=".BagActivity"  android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".RecepiesActivity"  android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".AddRecepies" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name=".UpdateRecipe" android:windowSoftInputMode="adjustPan"/>
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
